@@ -75,7 +75,7 @@ var work = {
         "description": "I am pursuing my Bachelor degree here."
     }]
 };
-var bio.display = function() {
+bio.display = function() {
     $("#header").prepend(HTMLbioPic.replace('%data%', bio.biopic));
     $("#header").prepend(HTMLheaderRole.replace('%data%', bio.role));
     $("#header").prepend(HTMLheaderName.replace('%data%', bio.name));
@@ -90,7 +90,7 @@ var bio.display = function() {
         $('#skills').prepend(HTMLskills.replace('%data%', bio.skills[i]));
 
     }
-}
+};
 bio.display();
 
 var email = HTMLemail.replace('%data%', bio.contacts.email);
@@ -106,7 +106,7 @@ for (var i = 0; i < contactsArray.length; i++) {
 }
 
 
-
+work.display=function(){
 $('#workExperience').append(HTMLjobstart);
 for (var i = 0; i < work.jobs.length; i++) {
 
@@ -116,10 +116,12 @@ for (var i = 0; i < work.jobs.length; i++) {
     $('.work-entry').append(HTMLworkLocation.replace('%data%', work.jobs[i].location));
     $('.work-entry').append(HTMLworkDescription.replace('%data%', work.jobs[i].description));
 }
+};
+work.display();
 
 
-
-var projects.display() {
+projects.display=function()
+{
     $('#projects').append(HTMLprojectStart);
     for (var i = 0; i < projects.projects.length; i++) {
         $('.project-entry').append(HTMLprojectTitle.replace('%data%', projects.projects[i].title));
@@ -127,12 +129,12 @@ var projects.display() {
         $('.project-entry').append(HTMLprojectDescription.replace('%data%', projects.projects[i].description));
         $('.project-entry').append(HTMLprojectImage.replace('%data%', projects.projects[i].images));
     }
-}
+};
 projects.display();
 
 
-
-var education.display() {
+education.display=function()
+{
     $("#education").append(HTMLschoolStart);
     for (var i = 0; i < education.schools.length; i++) {
 
@@ -144,7 +146,7 @@ var education.display() {
 
         $(".education-entry").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school), HTMLonlineDates.replace("%data%", education.onlineCourses[i].date), HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url));
     }
-}
+};
 education.display();
 
 $('#mapDiv').append(googleMap);
