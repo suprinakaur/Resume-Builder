@@ -90,20 +90,20 @@ bio.display = function() {
         $('#skills').prepend(HTMLskills.replace('%data%', bio.skills[i]));
 
     }
+
+    var email = HTMLemail.replace('%data%', bio.contacts.email);
+    var mobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+    var github = HTMLgithub.replace('%data%', bio.contacts.github);
+    var location_home = HTMLlocation.replace('%data%', bio.contacts.location);
+
+    var contactsArray = [email, mobile, github, location_home];
+
+    for (var i = 0; i < contactsArray.length; i++) {
+        $("#topContacts").append(contactsArray[i]);
+        $("#footerContacts").append(contactsArray[i]);
+    }
 };
 bio.display();
-
-var email = HTMLemail.replace('%data%', bio.contacts.email);
-var mobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-var github = HTMLgithub.replace('%data%', bio.contacts.github);
-var location_home = HTMLlocation.replace('%data%', bio.contacts.location);
-
-var contactsArray = [email, mobile, github, location_home];
-
-for (var i = 0; i < contactsArray.length; i++) {
-    $("#topContacts").append(contactsArray[i]);
-    $("#footerContacts").append(contactsArray[i]);
-}
 
 
 work.display = function() {
@@ -126,7 +126,10 @@ projects.display = function() {
         $('.project-entry').append(HTMLprojectTitle.replace('%data%', projects.projects[i].title));
         $('.project-entry').append(HTMLprojectDates.replace('%data%', projects.projects[i].dates));
         $('.project-entry').append(HTMLprojectDescription.replace('%data%', projects.projects[i].description));
-        $('.project-entry').append(HTMLprojectImage.replace('%data%', projects.projects[i].images));
+        for (var j = 0; j < projects.projects[i].images.length; j++) {
+            $('.project-entry').append(HTMLprojectImage.replace('%data%', projects.projects[i].images[j]));
+        }
+
     }
 };
 projects.display();
