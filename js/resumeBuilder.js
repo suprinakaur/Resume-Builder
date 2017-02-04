@@ -107,7 +107,7 @@ for (var i = 0; i < contactsArray.length; i++) {
 
 
 work.display=function(){
-$('#workExperience').append(HTMLworkstart);
+$('#workExperience').append(HTMLworkStart);
 for (var i = 0; i < work.jobs.length; i++) {
 
     var mywork = HTMLworkEmployer.replace('%data%', work.jobs[i].employer) + HTMLworkTitle.replace('%data%', work.jobs[i].title);
