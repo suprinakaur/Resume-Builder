@@ -106,22 +106,21 @@ for (var i = 0; i < contactsArray.length; i++) {
 }
 
 
-work.display=function(){
-$('#workExperience').append(HTMLworkStart);
-for (var i = 0; i < work.jobs.length; i++) {
+work.display = function() {
+    $('#workExperience').append(HTMLworkStart);
+    for (var i = 0; i < work.jobs.length; i++) {
 
-    var mywork = HTMLworkEmployer.replace('%data%', work.jobs[i].employer) + HTMLworkTitle.replace('%data%', work.jobs[i].title);
-    $('.work-entry').append(mywork);
-    $('.work-entry').append(HTMLworkDates.replace('%data%', work.jobs[i].dates));
-    $('.work-entry').append(HTMLworkLocation.replace('%data%', work.jobs[i].location));
-    $('.work-entry').append(HTMLworkDescription.replace('%data%', work.jobs[i].description));
-}
+        var mywork = HTMLworkEmployer.replace('%data%', work.jobs[i].employer) + HTMLworkTitle.replace('%data%', work.jobs[i].title);
+        $('.work-entry').append(mywork);
+        $('.work-entry').append(HTMLworkDates.replace('%data%', work.jobs[i].dates));
+        $('.work-entry').append(HTMLworkLocation.replace('%data%', work.jobs[i].location));
+        $('.work-entry').append(HTMLworkDescription.replace('%data%', work.jobs[i].description));
+    }
 };
 work.display();
 
 
-projects.display=function()
-{
+projects.display = function() {
     $('#projects').append(HTMLprojectStart);
     for (var i = 0; i < projects.projects.length; i++) {
         $('.project-entry').append(HTMLprojectTitle.replace('%data%', projects.projects[i].title));
@@ -133,8 +132,7 @@ projects.display=function()
 projects.display();
 
 
-education.display=function()
-{
+education.display = function() {
     $("#education").append(HTMLschoolStart);
     for (var i = 0; i < education.schools.length; i++) {
 
@@ -144,7 +142,7 @@ education.display=function()
     $(".education-entry").append(HTMLonlineClasses);
     for (var i = 0; i < education.onlineCourses.length; i++) {
 
-        $(".education-entry").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school), HTMLonlineDates.replace("%data%", education.onlineCourses[i].date), HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url));
+        $(".education-entry").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school), HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates), HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url));
     }
 };
 education.display();
